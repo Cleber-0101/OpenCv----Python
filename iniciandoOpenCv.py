@@ -1,9 +1,9 @@
 import cv2
 
-img =  cv2.imread('farol.jpg')
-imgCinza = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
+video = cv2.VideoCapture('runners.mp4')
 
-#print(img.shape)
-cv2.imshow('imagem', img)
-cv2.imshow('imagem cinza', imgCinza)
-cv2.waitKey(0)
+while True:
+    check, img = video.read()
+    print(img.shape)
+    cv2.imshow('Video', img)
+    cv2.waitKey(0)
